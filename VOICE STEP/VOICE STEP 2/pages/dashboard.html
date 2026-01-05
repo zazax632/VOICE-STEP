@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VOICE STEP Dashboard</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- Tailwind Config -->
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "soft-blue": "#7CC6F0",
+        "mint-green": "#9BE7C4",
+        "navy": "#003B3B",
+        "soft-orange": "#FF9F43",
+        "disabled": "#D6D6D6",
+        "bg-light": "#F4F6F8",
+      },
+      fontFamily: {
+        sans: ["Prompt", "sans-serif"],
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        "2xl": "1rem",
+        full: "9999px",
+      },
+    },
+  },
+}
+</script>
+
+<!-- External CSS -->
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body class="bg-bg-light min-h-screen flex flex-col text-navy">
+
+<header class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 px-6 py-4 shadow-sm">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="size-10 text-soft-blue flex items-center justify-center bg-soft-blue/10 rounded-xl">
+        <span class="material-symbols-outlined" style="font-size:26px;">graphic_eq</span>
+      </div>
+      <h1 class="text-2xl font-bold tracking-tight text-navy flex flex-col sm:flex-row sm:items-baseline gap-2">
+        <span>VOICE STEP</span>
+        <span class="text-base font-normal text-navy/70">ก้าวแห่งการพูด</span>
+      </h1>
+    </div>
+  </div>
+</header>
+
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 py-8">
+
+<!-- USER INFO -->
+<section class="mb-8">
+  <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8">
+    <div class="flex items-center gap-6 flex-1 border-b md:border-b-0 md:border-r pb-8 md:pb-0 md:pr-8">
+      <div class="relative">
+        <div class="rounded-full size-24 bg-gray-200 ring-4 ring-bg-light"></div>
+        <div class="absolute bottom-0 right-0 bg-mint-green text-navy rounded-full p-1 border-2 border-white">
+          <span class="material-symbols-outlined text-sm">check</span>
+        </div>
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold">Somsak Jai-dee</h2>
+        <p class="text-navy/60 text-sm mb-2">Speech Enthusiast</p>
+        <span class="px-3 py-1 text-xs rounded-full bg-soft-blue/10 border border-soft-blue/20">
+          Level 4
+        </span>
+      </div>
+    </div>
+
+    <div class="flex flex-1 justify-around items-center">
+      <div class="text-center">
+        <div class="size-12 rounded-full bg-soft-blue/10 text-soft-blue flex items-center justify-center mx-auto mb-2">
+          <span class="material-symbols-outlined">military_tech</span>
+        </div>
+        <p class="text-sm text-navy/50">Current Level</p>
+        <p class="text-4xl font-bold">4</p>
+      </div>
+
+      <div class="text-center">
+        <div class="size-12 rounded-full bg-mint-green/20 text-[#006644] flex items-center justify-center mx-auto mb-2">
+          <span class="material-symbols-outlined">stars</span>
+        </div>
+        <p class="text-sm text-navy/50">Total Score</p>
+        <p class="text-4xl font-bold">1,250</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING LEVELS -->
+<section>
+  <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+    <span class="material-symbols-outlined text-soft-blue">school</span>
+    Training Levels
+  </h3>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <!-- CARD -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col">
+      <h4 class="font-bold text-lg">คำพื้นฐาน</h4>
+      <p class="text-sm text-navy/50 mb-6">Basic Words</p>
+
+      <div class="flex flex-col items-center gap-3 mb-6">
+        <div class="size-8 rounded-full bg-soft-blue text-white flex items-center justify-center">
+          <span class="material-symbols-outlined text-sm">check</span>
+        </div>
+        <div class="size-8 rounded-full bg-mint-green text-white flex items-center justify-center">
+          <span class="material-symbols-outlined text-sm">check</span>
+        </div>
+        <div class="size-8 rounded-full border-2 border-soft-blue text-soft-blue flex items-center justify-center font-bold">
+          3
+        </div>
+        <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+          <span class="material-symbols-outlined text-sm">lock</span>
+        </div>
+      </div>
+
+      <button class="mt-auto py-2.5 bg-soft-blue text-white rounded-xl flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined">mic</span> ฝึกพูด
+      </button>
+    </div>
+
+   <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col">
+  <h4 class="font-bold text-lg">คำและประโยคสั้น</h4>
+  <p class="text-sm text-navy/50 mb-6">Short Sentences</p>
+
+  <div class="flex flex-col items-center gap-3 mb-6">
+    <div class="size-8 rounded-full bg-soft-blue text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">check</span>
+    </div>
+
+    <div class="size-8 rounded-full border-2 border-soft-blue text-soft-blue flex items-center justify-center font-bold">
+      2
+    </div>
+
+    <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">lock</span>
+    </div>
+
+    <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">lock</span>
+    </div>
+
+    <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">lock</span>
+    </div>
+  </div>
+
+  <button class="mt-auto py-2.5 bg-soft-blue text-white rounded-xl flex items-center justify-center gap-2">
+    <span class="material-symbols-outlined">mic</span>
+    ฝึกพูด
+  </button>
+</div>
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col">
+  <h4 class="font-bold text-lg">การสื่อสารในชีวิตประจำวัน</h4>
+  <p class="text-sm text-navy/50 mb-6">Daily Communication</p>
+
+  <div class="flex flex-col items-center gap-3 mb-6">
+    <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">lock</span>
+    </div>
+
+    <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">lock</span>
+    </div>
+
+    <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">lock</span>
+    </div>
+
+    <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">lock</span>
+    </div>
+
+    <div class="size-8 rounded-full bg-disabled text-white flex items-center justify-center">
+      <span class="material-symbols-outlined text-sm">lock</span>
+    </div>
+  </div>
+
+  <button class="mt-auto py-2.5 bg-disabled text-white rounded-xl flex items-center justify-center gap-2 cursor-not-allowed" disabled>
+    <span class="material-symbols-outlined">lock</span>
+    ยังไม่ปลดล็อก
+  </button>
+</div>
+  </div>
+</section>
+
+</main>
+</body>
+</html>
