@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  background: linear-gradient(135deg, #9be7c4, #7cc6f0);
+  min-height: 100vh;
+}
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ==================== LEFT SECTION ==================== */
+.auth-info {
+  flex: 1;
+  padding: 60px;
+  color: #003b3b;
+}
+
+.auth-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.auth-info h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.info-text {
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.benefits {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.benefits li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.skip-actions a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 14px;
+  color: #004f4f;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.skip-actions a:hover {
+  color: #003030;
+}
+
+.disclaimer {
+  margin-top: 40px;
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+/* ==================== RIGHT SECTION ==================== */
+.auth-form {
+  flex: 1;
+  background: #ffffff;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ✅ FIX: เพิ่ม z-index กันโดนฟอร์มทับ */
+.form-toggle {
+  display: flex;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+.form-toggle button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  font-family: 'Prompt', sans-serif;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.form-toggle button:hover {
+  background: #ddd;
+}
+
+.form-toggle .active {
+  background: #7cc6f0;
+  color: #fff;
+}
+
+/* ==================== FORM (🔥 จุดที่แก้หลัก) ==================== */
+.form {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  animation: fade 0.4s ease;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  color: #003b3b;
+  font-size: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #333;
+}
+
+label span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #7cc6f0;
+}
+
+input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* ==================== MESSAGES ==================== */
+.error-message {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+  animation: shake 0.3s;
+}
+
+.success-message {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  text-align: center;
+  display: none;
+  font-size: 14px;
+}
+
+.success-message.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn.primary {
+  width: 100%;
+  padding: 14px;
+  background: #7cc6f0;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Prompt', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+
+.btn.primary:hover {
+  background: #5db4e8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn.primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+  .auth-info, .auth-form {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-info, .auth-form {
+    padding: 30px 15px;
+  }
+}
